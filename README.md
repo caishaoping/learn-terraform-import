@@ -40,6 +40,15 @@ HashiCorp Learn.
     ```shell
     terraform import docker_container.web $(docker inspect -f {{.ID}} hashicorp-learn)
     ```
+if the import failed with 404 error like below, consinder to  "Expose daemon on tcp://localhost:2375 without TLS" in Docker Desktop's setting:
+
+Error: Error pinging Docker server: Error response from daemon: <html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx/1.19.6</center>
+</body>
+</html>
 
 1. Now the container is in your terraform configuration's state.
 
